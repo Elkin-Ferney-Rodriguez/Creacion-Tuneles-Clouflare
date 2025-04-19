@@ -1,0 +1,7 @@
+tunnel: {{tunnel_id}}
+credentials-file: {{credentials_path}}
+
+ingress:
+  - hostname: {{hostname}}
+    service: {{protocolo}}://{{ip}}:{{puerto}}
+  - service: http_status: 404
