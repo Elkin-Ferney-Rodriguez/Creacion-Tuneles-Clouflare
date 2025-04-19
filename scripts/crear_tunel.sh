@@ -26,7 +26,7 @@ fi
 read -p "Hostname (ej: servicio.devpersonal.site): " HOSTNAME
 HOSTNAME=$(echo "$HOSTNAME" | tr '[:upper:]' '[:lower:]' | xargs)
 
-read -p "Dirección local del servicio (ej: http://10.141.99.219:8000): " SERVICE_URL
+read -p "Dirección local del servicio (ej: http://IP o LOCALHOST:8000): " SERVICE_URL
 
 # Verificar conexión al servicio
 echo "🧪 Verificando si el servicio está accesible..."
@@ -73,7 +73,7 @@ PROTOCOLO=$(echo "$SERVICE_URL" | grep -oE '^https?')
 DEST_CONFIG="$CONFIG_DIR/$NOMBRE_TUNEL/config.yml"
 
 # Preguntar si se desea ignorar la verificación TLS
-echo "¿Tu servicio usa HTTPS con certificado autofirmado o estás usando IP directa? (s/n)"
+echo "¿selecciona (s) Tu servicio usa HTTPS con certificado autofirmado o (n) si estás usando IP directa? (s/n)"
 read -r usar_no_tls_verify
 
 # Crear config.yml dinámicamente
